@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { users } from "../data/users-data";
 
 type UserType = {
-  id: number,
+  id?: number,
   name: string,
   surname: string,
   email: string
