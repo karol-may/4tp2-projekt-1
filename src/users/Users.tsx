@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { users } from "../data/users-data";
 
 type UserType = {
@@ -29,8 +30,8 @@ function Users(){
               <td>{v.surname}</td>
               <td>{v.email}</td>
               <td className={"d-flex gap-2"}>
-                <button className={"btn btn-info btn-sm text-white"}><i className="bi bi-eye"></i></button>
-                <button className={"btn btn-primary btn-sm"}><i className="bi bi-pencil"></i></button>
+                <Link to={"/user/"+v.id} className={"btn btn-info btn-sm text-white"}><i className="bi bi-eye"></i></Link>
+                <a href={"/user/"} className={"btn btn-primary btn-sm"}><i className="bi bi-pencil"></i></a>
               </td>
             </tr>
           )}

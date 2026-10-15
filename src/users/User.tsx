@@ -3,7 +3,7 @@ import { users } from "../data/users-data";
 
 function User(){
 
-    let {id} = useParams();   
+   let {id} = useParams();   
 
    const user = users.find((v) => v.id === Number(id));
 
