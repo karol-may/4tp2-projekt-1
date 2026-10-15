@@ -7,6 +7,7 @@ import { Users } from './users/Users.tsx'
 import { User } from './users/User.tsx'
 import './App.css'
 import { Navbar } from './components/Navbar.tsx'
+import { UserEdit } from './users/UserEdit.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/" element={<App/>} />
               <Route path="users" element={<Users/>} />
               <Route path="user/:id" element={<User/>} />
+              <Route path="user/:id/edit" element={<UserEdit/>} />
             </Routes>
         </main>
       </div>

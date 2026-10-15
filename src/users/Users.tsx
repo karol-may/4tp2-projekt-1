@@ -31,7 +31,7 @@ function Users(){
               <td>{v.email}</td>
               <td className={"d-flex gap-2"}>
                 <Link to={"/user/"+v.id} className={"btn btn-info btn-sm text-white"}><i className="bi bi-eye"></i></Link>
-                <a href={"/user/"} className={"btn btn-primary btn-sm"}><i className="bi bi-pencil"></i></a>
+                <Link to={"/user/"+v.id+"/edit"} className={"btn btn-primary btn-sm"}><i className="bi bi-pencil"></i></Link>
               </td>
             </tr>
           )}
