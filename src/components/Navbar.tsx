@@ -2,7 +2,7 @@ import { NavLink } from "react-router"
 
 export function Navbar(){
     return(
-        <ul className="nav">
+        <ul className="nav container">
             <li className="nav-item">
                 <NavLink className={({isActive}) => isActive?"active nav-link":"nav-link" } to="/">Strona główna</NavLink>            </li>
             <li className="nav-item">

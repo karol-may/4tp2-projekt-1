@@ -1,10 +1,4 @@
-
-
-
 function App() {
-
-
-
   return (
     <>
        Strona Główna

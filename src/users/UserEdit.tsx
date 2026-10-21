@@ -1,14 +1,19 @@
 import { useState } from "react";
 import type { UserType } from "./Users";
+import { useParams } from "react-router";
+import { users } from "../data/users-data";
 
 function UserEdit(){
   
-    let [formData,setFormData] = useState<UserType>({
-        id: undefined,
-        name: "",
-        surname: "",
-        email:""
-    })
+   let {id} = useParams();   
+
+   const user = users.find((v) => v.id === Number(id));
+
+    if (!user) {
+        return <div>Nie znaleziono użytkownika.</div>;
+    }
+
+    let [formData,setFormData] = useState<UserType>(user)
 
     function handleChange(e:any) {
         const { name, value } = e.target;        
