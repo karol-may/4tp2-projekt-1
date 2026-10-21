@@ -1,5 +1,13 @@
 import { Link } from "react-router";
-import { users } from "../data/users-data";
+import { neon } from "../lib/neon";
+
+const { data } = await neon
+  .from('users')
+  .select('*')
+  .order('id', { ascending: false })
+  .returns<UserType[]>();
+
+const users: UserType[] = data ?? [];
 
 type UserType = {
   id?: number,
