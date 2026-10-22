@@ -3,7 +3,6 @@ import type { UserType } from "./Users";
 import { neon } from "../lib/neon";
 
 function UserNew(){
-  
 
     let [errors, setErrors] = useState("");
      let [formData,setFormData] = useState<UserType>({
