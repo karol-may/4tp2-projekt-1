@@ -9,6 +9,7 @@ import { Navbar } from './components/Navbar.tsx'
 import { UserEdit } from './users/UserEdit.tsx'
 import { UserNew } from './users/UserNew.tsx'
 
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
@@ -21,7 +22,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="user/:id" element={<User/>} />
               <Route path="user/:id/edit" element={<UserEdit/>} />
               <Route path="user/new" element={<UserNew/>} />
-            </Routes>
+d            </Routes>
         </main>
       </div>
     </BrowserRouter>

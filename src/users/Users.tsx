@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { neon } from "../lib/neon";
 
 const { data } = await neon
@@ -17,8 +17,16 @@ type UserType = {
 }
 
 
-function Users(){
 
+function Users(){
+    let navigate = useNavigate();
+
+    async function deleteUserHandler(id?: number){
+      if (id) {
+        await neon.from("users").delete().eq("id", id);
+      }
+      navigate("/users");
+    }
 
     return <table className={"table table-striped table-bordered"}>
         <thead>
@@ -44,9 +52,9 @@ function Users(){
                 <Link to={"/user/"+v.id+"/edit"} className={"btn btn-primary btn-sm"}>
                   <i className="bi bi-pencil"></i>
                 </Link>
-                <Link to={"/user/"+v.id+"/delete"} className={"btn btn-danger btn-sm"}>
+                <button onClick={()=>deleteUserHandler(v.id)} type="button" className={"btn btn-danger btn-sm"}>
                   <i className="bi bi-trash"></i>
-                </Link>
+                </button>
               </td>
             </tr>
           )}

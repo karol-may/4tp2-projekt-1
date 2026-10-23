@@ -1,8 +1,11 @@
 import { useState } from "react";
 import type { UserType } from "./Users";
 import { neon } from "../lib/neon";
+import { useNavigate } from "react-router";
+
 
 function UserNew(){
+    let navigate = useNavigate();
 
     let [errors, setErrors] = useState("");
      let [formData,setFormData] = useState<UserType>({
@@ -37,7 +40,9 @@ function UserNew(){
             }
             
         };
-
+        if (data) {            
+             return navigate("/users");
+        }
         return data;
     }
 
